@@ -19,8 +19,18 @@ body{
     height: 100vh;
     background-image: url(images/background3.png);
     background-size: cover;
-    background-position: center;
+    background-position: right;
 }
+
+nav ul#sidemenu {
+    margin-left: 100; /* left margin remove */
+    padding-left: 0; /* left padding remove */
+    display: flex;
+    gap: 20px; /* items අතර distance */
+    justify-content: left; /* links වමට align */
+}
+
+
 
 .container{
     padding: 10px 10%;
@@ -98,11 +108,17 @@ nav ul li a:hover::after{
 
 .about-col-1 img{
     width: 100%;
+    height: 70%;
     border-radius: 15px;
+    
 }
 
 .about-col-2{
     flex-basis: 60%;
+}
+
+.about-col-2 p{
+    font-size: 16px;
 }
 
 .sub-title{
@@ -142,11 +158,13 @@ nav ul li a:hover::after{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    font-size: 16px;
 }
 
 .tab-contents ul li span{
     color: #b54769;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .tab-contents{
@@ -187,8 +205,15 @@ nav ul li a:hover::after{
 
 .services-list div h2{
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.services-list div p{
+    font-size: 20px;
+    font-weight: 100;
     margin-bottom: 15px;
+    
 }
 
 .services-list div a{
@@ -245,7 +270,7 @@ nav ul li a:hover::after{
     flex-direction: column;
     padding: 0 40px;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     transition: height 0.5s;
 }
 
@@ -385,6 +410,17 @@ nav .fa-solid{
     #header{
         background-image: url(images/amilaPhone1.png);
     }
+   
+    nav ul#sidemenu {
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end; /* right-align menu items */
+        list-style: none;
+    }
+    
+    
     .header-text{
         margin-top: 100%;
         font-size: 16px;
@@ -452,3 +488,46 @@ nav .fa-solid{
 }
 
 
+.header-text h1 {
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 0; 
+    animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+  }
+  
+  /* typing animation - gradually increase width */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 30ch; }  /* here 30ch = approx number of characters */
+  }
+  
+  /* blinking cursor */
+  @keyframes blink {
+    50% { border-color: transparent; }
+    100% { border-color: #ff004f; }
+  }
+  
+
+
+
+  
+  #header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background3.png);
+    background-size: cover;
+    background-position: center;
+    animation: backgroundFadeInZoom 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes backgroundFadeInZoom {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
